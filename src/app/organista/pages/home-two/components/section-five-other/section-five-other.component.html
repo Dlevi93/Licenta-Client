@@ -1,0 +1,124 @@
+<div class="section section-padding pt-0 licenta_other">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="sidebar-widget">
+                    <div class="section-title">
+                        <h4 class="title cursor-pointer" [routerLink]="'/articole/categorii/cultural'">Cultural</h4>
+                    </div>
+                    <div class="andro_product" *ngIf="culture !== undefined && culture.length > 0">
+                        <div class="andro_product-thumb" *ngIf="culture[0].files[0].content !== null">
+                            <a [routerLink]="'/articol/'+culture[0].slug"><img
+                                    [src]="baseUrl + setImageSize(culture[0].files[0], 'S')" alt="product"></a>
+                        </div>
+                        <div class="andro_product-body">
+                            <h5 class="andro_product-title"> <a [routerLink]="'/articol/'+culture[0].slug"
+                                    class="rows2overflow">
+                                    {{culture[0].title}}
+                                </a>
+                            </h5>
+                            <p class="rows4overflow cursor-pointer" [routerLink]="'/articol/'+culture[0].slug">
+                                {{stripHtmlString(culture[0].text)}}</p>
+                        </div>
+                        <div class="andro_product-footer">
+                            <ul>
+                                <li *ngFor="let article of culture.slice(1,5)">
+                                    <a [routerLink]="'/articol/'+article.slug"> &#183; {{article.title}} </a>
+                                </li>
+                                <div class="andro_product-buttons" style="margin-top:25px;">
+                                    <a [routerLink]="'/articole/categorii/Kultúr-Táj'" class="andro_btn-custom primary"
+                                        style="width: 100%;">Összes
+                                        articol</a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Deal End -->
+                </div>
+                <!-- Daily Deals End -->
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Daily Deals Start -->
+                <div class="sidebar-widget">
+                    <div class="section-title">
+                        <h4 class="title cursor-pointer" [routerLink]="'/articole/categorii/Sport'">Sport</h4>
+                    </div>
+                    <!-- Deal Start -->
+                    <div class="andro_product" *ngIf="sport !== undefined && sport.length > 0">
+                        <!-- <div class="andro_product-badge andro_badge-sale">
+                            {{sport[0].dateCreated | date:'mediumDate':'':'hu'}}
+                        </div> -->
+                        <div class="andro_product-thumb" *ngIf="sport[0].files[0].content !== null">
+                            <a [routerLink]="'/articol/'+sport[0].slug"><img
+                                    [src]="baseUrl + setImageSize(sport[0].files[0], 'S')" alt="product"></a>
+                        </div>
+                        <div class="andro_product-body">
+                            <h5 class="andro_product-title"> <a [routerLink]="'/articol/'+sport[0].slug"
+                                    class="rows2overflow">
+                                    {{sport[0].title}}
+                                </a>
+                            </h5>
+                            <p class="rows4overflow cursor-pointer" [routerLink]="'/articol/'+sport[0].slug">
+                                {{stripHtmlString(sport[0].text)}}</p>
+                        </div>
+                        <div class="andro_product-footer">
+                            <ul>
+                                <li *ngFor="let article of sport.slice(1,5)">
+                                    <a [routerLink]="'/articol/'+article.slug"> &#183; {{article.title}} </a>
+                                </li>
+                                <div class="andro_product-buttons" style="margin-top:25px;">
+                                    <a [routerLink]="'/articole/categorii/Sport'" class="andro_btn-custom primary"
+                                        style="width: 100%;">Toate articolele</a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Deal End -->
+                </div>
+                <!-- Daily Deals End -->
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Daily Deals Start -->
+                <div class="sidebar-widget">
+                    <div class="section-title">
+                        <h4 class="title cursor-pointer" [routerLink]="'/articole/categorii/Magazin'">Magazin</h4>
+                    </div>
+                    <!-- Deal Start -->
+                    <div class="andro_product" *ngIf="magazine !== undefined && magazine.length > 0">
+                        <!-- <div class="andro_product-badge andro_badge-sale">
+                            {{magazine[0].dateCreated | date:'mediumDate':'':'hu'}}
+                        </div> -->
+                        <div class="andro_product-thumb" *ngIf="magazine[0].files[0].content !== null">
+                            <a [routerLink]="'/articol/'+magazine[0].slug"><img
+                                    [src]="baseUrl + setImageSize(magazine[0].files[0], 'S')" alt="product"></a>
+                        </div>
+                        <div class="andro_product-body">
+                            <h5 class="andro_product-title"> <a [routerLink]="'/articol/'+magazine[0].slug"
+                                    class="rows2overflow">
+                                    {{magazine[0].title}}
+                                </a>
+                            </h5>
+                            <p class="rows4overflow cursor-pointer" [routerLink]="'/articol/'+magazine[0].slug">
+                                {{stripHtmlString(magazine[0].text)}}</p>
+                        </div>
+                        <div class="andro_product-footer">
+                            <ul>
+                                <li *ngFor="let article of magazine.slice(1,5)">
+                                    <a [routerLink]="'/articol/'+article.slug"> &#183; {{article.title}} </a>
+                                </li>
+                                <div class="andro_product-buttons" style="margin-top:25px;">
+                                    <a [routerLink]="'/articole/categorii/Magazin'" class="andro_btn-custom primary"
+                                        style="width: 100%;">Toate articolele</a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Deal End -->
+                </div>
+                <!-- Daily Deals End -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="sidebar-widget">
+    <div class="section-title">
+        <h4 class="title">Cele mai noi știri</h4>
+    </div>
+    <ul class="sidebar-widget-list">
+        <li *ngFor="let article of latestNews">
+            <a [routerLink]="'/articol/'+article.slug" class="rows1overflow">{{article.title}}</a>
+            <span class="category-tag"> {{article.category.name}} <span
+                    style="float:right;color:gray">{{setArticleTime(article.dateCreated)}}</span>
+            </span>
+        </li>
+    </ul>
+</div>

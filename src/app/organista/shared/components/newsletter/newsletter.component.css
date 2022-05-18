@@ -1,0 +1,4 @@
+.andro_btn-custom:disabled {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid red;
+  }

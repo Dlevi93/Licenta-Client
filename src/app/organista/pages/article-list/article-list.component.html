@@ -1,0 +1,42 @@
+<!-- Subheader Start -->
+<div class="andro_subheader primary-bg">
+    <div class="container">
+        <div class="andro_subheader-inner">
+            <h1>{{title | uppercase}}</h1>
+        </div>
+    </div>
+</div>
+<!-- Subheader End -->
+<!-- Blog Posts Start -->
+<div class="section">
+    <div class="container">
+        <article class="andro_post andro_post-list"
+            *ngFor="let article of asyncArticles | async | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
+            <div class="andro_post-thumb"
+                *ngIf="article.files.length > 0 && article.files[0].content !== null && article.files[0].contentType === '.jpg'">
+                <a [routerLink]="'/articol/'+article.slug">
+                    <img [src]="baseUrl + setImageSize(article.files[0], 'S')" alt="post">
+                </a>
+            </div>
+            <div class="andro_post-body">
+                <div class="andro_post-desc">
+                    <h5 style="margin-top:20px;"> <a [routerLink]="'/articol/'+article.slug"
+                            class="rows2overflow">{{article.title}}</a> </h5>
+                    <span> {{article.category.name}}, {{article.dateCreated | date:'mediumDate':'':'ro'}} <a
+                            class="andro_post-date">
+                        </a>
+                    </span>
+                    <p class="rows4overflow">{{stripHtmlString(article.text)}}</p>
+                </div>
+            </div>
+        </article>
+
+        <div class="has-text-centered pagination mb-0">
+            <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+            <pagination-controls class="pagination" previousLabel="<-" nextLabel="->"
+                (pageChange)="getPage($event)" id="server">
+            </pagination-controls>
+        </div>
+        <!-- Pagination End -->
+    </div>
+</div>

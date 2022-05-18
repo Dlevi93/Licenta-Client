@@ -1,0 +1,28 @@
+.andro_post-thumb{
+    max-width: 380px;
+}
+
+.pagination /deep/ .ngx-pagination li.current{
+    background-color: #50BD49;
+    color:white;
+    border-radius: 8px;
+    border: 0;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pagination /deep/ .ngx-pagination li{
+    border-radius: 8px;
+    color: #18181D;
+    border: 0;
+    background-color: #F0F2F3;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 10px;
+    cursor: pointer;
+    margin: 5px;
+}
+

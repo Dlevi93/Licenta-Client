@@ -1,0 +1,11 @@
+<div class="sidebar-widget">
+    <div class="section-title">
+        <h4 class="title">Comentarii</h4>
+    </div>
+    <ul class="sidebar-widget-list">
+        <li *ngFor="let comment of latestComments">
+            <blockquote class="rows2overflow" [innerHtml]="getCommentText(comment)"></blockquote>
+            <span class="comment-tag rows1overflow"> <a target="_blank" routerLink='/articol/{{comment.article.slug}}'> {{comment.article.title}} </a></span>
+        </li>
+    </ul>
+</div>

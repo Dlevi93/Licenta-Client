@@ -1,0 +1,67 @@
+.licenta_inland .andro_product .andro_product-footer{
+    padding-top: 0px;
+    margin-top:10px;
+}
+
+.licenta_inland .andro_product .andro_product-price span{
+    font-weight: 400;
+    font-style: italic;
+}
+
+.licenta_inland .andro_product .andro_product-footer ul li{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 6.5px;
+}
+
+.licenta_inland .andro_product .andro_product-footer ul li a{
+    color: #838383;
+}
+
+.licenta_inland .andro_product .andro_product-footer ul li a:hover{
+    color: #6e0101;
+}
+
+.Licenta_bf ul{
+    margin-bottom:0px;
+}
+
+.Licenta_bf ul li{
+    margin:5px 0px;
+}
+
+.Licenta_bf ul li a{
+    color:#838383;
+}
+
+.Licenta_bf ul li a:hover{
+    color: #6e0101;
+}
+
+.andro_product .andro_product-body h5{
+    margin-bottom: 5px;
+}
+
+.fixed-image .andro_product .andro_product-thumb{
+    height: 131px;
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.fixed-image .andro_product .andro_product-thumb img{
+    display: block;
+}
+
+.sidebar-widget ul.sidebar-widget-list li + li {
+    margin-top: 10px;
+}
+
+.sidebar-widget + .sidebar-widget {
+    margin-top: 10px;
+}

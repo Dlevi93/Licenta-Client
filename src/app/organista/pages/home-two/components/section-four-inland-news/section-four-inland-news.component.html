@@ -1,0 +1,205 @@
+<div class="section">
+    <div class="container licenta_inland">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row fixed-image">
+                    <div class="col-lg-4">
+                        <div class="sidebar-widget">
+                            <div class="section-title">
+                                <h4 class="title cursor-pointer" [routerLink]="'/articole/categorii/clujnapoca'">
+                                    Cluj-Napoca
+                                </h4>
+                            </div>
+                            <div class="andro_product" *ngIf="clujnapoca !== undefined && clujnapoca.length > 0">
+                                <div class="andro_product-thumb" *ngIf="clujnapoca[0].files[0].content !== null">
+                                    <a [routerLink]="'/articol/'+clujnapoca[0].slug"><img
+                                            [src]="baseUrl + setImageSize(clujnapoca[0].files[0], 'S')"
+                                            alt="product"></a>
+                                </div>
+                                <div class="andro_product-body">
+                                    <h5 class="andro_product-title"> <a [routerLink]="'/articol/'+clujnapoca[0].slug"
+                                            class="rows4overflow"> {{clujnapoca[0].title}}
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div class="andro_product-footer">
+                                    <ul>
+                                        <li *ngFor="let article of clujnapoca.slice(1,5)">
+                                            <a [routerLink]="'/articol/'+article.slug"> &#183; {{article.title}} </a>
+                                        </li>
+                                        <div class="andro_product-buttons" style="margin-top:25px;">
+                                            <a [routerLink]="'/articole/categorii/clujnapoca'"
+                                                class="andro_btn-custom primary" style="width: 100%;">Toate
+                                                articolele</a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="sidebar-widget">
+                            <div class="section-title">
+                                <h4 class="title cursor-pointer" [routerLink]="'/articole/categorii/Cluj'">Cluj
+                                </h4>
+                            </div>
+                            <div class="andro_product" *ngIf="cluj !== undefined && cluj.length > 0">
+                                <div class="andro_product-thumb" *ngIf="cluj[0].files[0].content !== null">
+                                    <a [routerLink]="'/articol/'+cluj[0].slug"><img
+                                            [src]="baseUrl + setImageSize(cluj[0].files[0], 'S')" alt="product"></a>
+                                </div>
+                                <div class="andro_product-body">
+                                    <h5 class="andro_product-title"> <a [routerLink]="'/articol/'+cluj[0].slug"
+                                            class="rows4overflow"> {{cluj[0].title}}
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div class="andro_product-footer">
+                                    <ul>
+                                        <li *ngFor="let article of cluj.slice(1,5)">
+                                            <a [routerLink]="'/articol/'+article.slug"> &#183; {{article.title}} </a>
+                                        </li>
+                                        <div class="andro_product-buttons" style="margin-top:25px;">
+                                            <a [routerLink]="'/articole/categorii/cluj'"
+                                                class="andro_btn-custom primary" style="width: 100%;">Toate
+                                                articolele</a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="sidebar-widget">
+                            <div class="section-title">
+                                <h4 class="title cursor-pointer" [routerLink]="'/articole/categorii/Transilvania'">
+                                    Transilvania</h4>
+                            </div>
+                            <div class="andro_product" *ngIf="transilvania !== undefined && transilvania.length > 0">
+                                <div class="andro_product-thumb" *ngIf="transilvania[0].files[0].content !== null">
+                                    <a [routerLink]="'/articol/'+transilvania[0].slug"><img
+                                            [src]="baseUrl + setImageSize(transilvania[0].files[0], 'S')"
+                                            alt="product"></a>
+                                </div>
+                                <div class="andro_product-body">
+                                    <h5 class="andro_product-title"> <a [routerLink]="'/articol/'+transilvania[0].slug"
+                                            class="rows4overflow cursor-pointer"
+                                            [routerLink]="'/articol/'+transilvania[0].slug">
+                                            {{transilvania[0].title}}
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div class="andro_product-footer">
+                                    <ul>
+                                        <li *ngFor="let article of transilvania.slice(1,5)">
+                                            <a [routerLink]="'/articol/'+article.slug"> &#183; {{article.title}} </a>
+                                        </li>
+                                        <div class="andro_product-buttons" style="margin-top:25px;">
+                                            <a [routerLink]="'/articole/categorii/Transilvania'"
+                                                class="andro_btn-custom primary" style="width: 100%;">Toate
+                                                articolele</a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 Licenta_aktualitasok">
+                        <div class="section-title flex-title">
+                            <h4 class="title cursor-pointer" [routerLink]="'/articole/categorii/stiri'">Știri /
+                                Actualități</h4>
+                            <div class="andro_arrows">
+                                <div class="andro_product-buttons">
+                                    <a [routerLink]="'/articole/categorii/stiri'" class="andro_btn-custom primary">Toate
+                                        articolele</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6" *ngFor="let article of news.slice(0,4)">
+                                <div
+                                    class="andro_product andro_product-list andro_product-has-controls andro_product-has-buttons">
+                                    <div class="andro_product-thumb" *ngIf="article.files[0].content !== null">
+                                        <a [routerLink]="'/articol/'+article.slug"> <img
+                                                [src]="baseUrl + setImageSize(article.files[0], 'S')" alt="product"></a>
+                                    </div>
+                                    <div class="andro_product-body">
+                                        <h5 class="andro_product-title rows2overflow"> <a
+                                                [routerLink]="'/articol/'+article.slug">
+                                                {{article.title}}</a> </h5>
+                                        <p class="rows2overflow cursor-pointer m-0"
+                                            [routerLink]="'/articol/'+article.slug">
+                                            {{stripHtmlString(article.text)}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6" *ngFor="let article of act.slice(0,4)">
+                                <div
+                                    class="andro_product andro_product-list andro_product-has-controls andro_product-has-buttons">
+                                    <div class="andro_product-thumb" *ngIf="article.files[0].content !== null">
+                                        <a [routerLink]="'/articol/'+article.slug"> <img
+                                                [src]="baseUrl + setImageSize(article.files[0], 'S')" alt="product"></a>
+                                    </div>
+                                    <div class="andro_product-body">
+                                        <h5 class="andro_product-title rows2overflow"> <a
+                                                [routerLink]="'/articol/'+article.slug">
+                                                {{article.title}}</a> </h5>
+                                        <p class="rows2overflow cursor-pointer m-0"
+                                            [routerLink]="'/articol/'+article.slug">
+                                            {{stripHtmlString(article.text)}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <carousel cellWidth='100%' height='115' objectFit autoplay='true' loop='true' arrows
+                    [images]="imagesOnMiddle" style="z-index: 0;" (events)="handleCarouselEvents($event)">
+                </carousel>
+
+            </div>
+            <div class="col-lg-3">
+
+                <div class="sidebar" style="padding-bottom: 20px;">
+                    <carousel cellWidth='100%' objectFit autoplay='true' loop='true' arrows [images]="imagesOnRight1"
+                        style="z-index: 0;" (events)="handleCarouselEvents($event)">
+                    </carousel>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <div class="section-title">
+                            <h4 class="title">Cele mai citite articole</h4>
+                        </div>
+                        <ul class="sidebar-widget-list">
+                            <li *ngFor="let article of mostViewed">
+                                <a [routerLink]="'/articol/'+article.slug"> {{article.title}} <span>
+                                        ({{article.views}})</span> </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget" style="padding-bottom: 20px;">
+                        <app-newsletter></app-newsletter>
+                    </div>
+
+                    <div class="sidebar" style="padding-bottom: 20px;">
+                        <carousel cellWidth='100%' objectFit autoplay='true' loop='true' arrows
+                            [images]="imagesOnRight2" style="z-index: 0;" (events)="handleCarouselEvents($event)">
+                        </carousel>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <app-latest-comments></app-latest-comments>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+blockquote{
+  padding: 2px 6px;
+  font-size: 12px;
+  margin:0px;
+}
+
+.andro_product .andro_badge-sale{
+  min-width: 65%;
+}

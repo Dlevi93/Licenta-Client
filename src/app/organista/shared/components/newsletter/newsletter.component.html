@@ -1,0 +1,10 @@
+<div class="andro_newsletter-form">
+    <h5>Newsletter</h5>
+    <form name="newsLetterForm" [formGroup]="newsLetterForm">
+        <div class="form-group">
+            <input #inputElem type="email" class="form-control" formControlName="email" placeholder="Email" required>
+        </div>
+        <button [disabled]="checkIfDisabled()" type="submit" (click)="subscribe()"
+            class="andro_btn-custom secondary btn-block shadow-none" name="button">{{title}}</button>
+    </form>
+</div>

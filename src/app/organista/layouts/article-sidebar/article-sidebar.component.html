@@ -1,0 +1,54 @@
+<div class="sidebar">
+    <div class="sidebar-widget" style="margin-bottom: 15px;" *ngIf="article">
+        <div class="andro_icon-block">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="andro_post-single-author" style="margin-top:3px;">
+                        <div class="andro_post-single-author-content">
+                            <p>{{article.author}}</p>
+                            <span>{{article.dateCreated | date:'mediumDate':'':'ro'}}</span>
+                            <br />
+                            <span *ngIf="imgAuthor">fotografie: {{imgAuthor}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="andro_post-share" style="margin-top:0px;">
+                        <ul class="andro_sm" style="float:right;">
+                            <li> <a href="javascript:void(0)" (click)="shareOnFb()" data-toggle="tooltip"
+                                    title="Share">
+                                    <i class="fab fa-facebook-f" style="font-size: initial;margin: initial;"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <p style="display: inline-flex; vertical-align: -webkit-baseline-middle;">Marime text: </p>
+                    <div style="float:right">
+                        <span class="cursor-pointer" [ngClass]="active14" (click)="changeFontSize('14')"
+                            style="font-size: 12px;">A</span> /
+                        <span class="cursor-pointer" [ngClass]="active16" (click)="changeFontSize('16')"
+                            style="font-size: 14px;">A</span> /
+                        <span class="cursor-pointer" [ngClass]="active18" (click)="changeFontSize('18')"
+                            style="font-size: 16px;">A</span> /
+                        <span class="cursor-pointer" [ngClass]="active20" (click)="changeFontSize('20')"
+                            style="font-size: 18px;">A</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-latest-news></app-latest-news>
+
+    <div class="sidebar-widget" style="padding-top:25px;">
+        <carousel cellWidth='100%' objectFit autoplay='true' loop='true' arrows [images]="imagesOnRight1"
+            style="z-index: 0;" (events)="handleCarouselEvents($event)">
+        </carousel>
+    </div>
+
+    <div class="sidebar-widget">
+        <app-newsletter></app-newsletter>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.andro_related-posts-slider .andro_product-thumb{
+    height: 230px;
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.andro_related-posts-slider .andro_product-thumb img{
+    display: block;
+}

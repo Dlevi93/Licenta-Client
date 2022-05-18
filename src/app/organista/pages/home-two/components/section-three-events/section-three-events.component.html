@@ -1,0 +1,34 @@
+<div class="section andro_fresh-arrivals">
+    <div class="container licenta_events">
+        <div class="section-title flex-title">
+            <h4 class="title cursor-pointer" [routerLink]="'/articole/categorii/evenimente'">Evenimente</h4>
+            <div class="andro_arrows">
+                <i class="fa fa-arrow-left slick-arrow slider-prev"></i>
+                <i class="fa fa-arrow-right slick-arrow slider-next"></i>
+            </div>
+        </div>
+        <div class="andro_fresh-arrivals-slider">
+            <!-- Product Start -->
+            <div class="andro_product andro_product-has-controls andro_product-has-buttons"
+                *ngFor="let article of articles">
+                <div class="andro_product-thumb" *ngIf="article.files[0].content !== null">
+                    <a [routerLink]="'/articol/'+article.slug"><img [src]="baseUrl + setImageSize(article.files[0],'S')"
+                            alt="product"></a>
+                </div>
+                <div class="andro_product-body">
+                    <h5 class="andro_product-title"> <a [routerLink]="'/articol/'+article.slug"> {{article.title}} </a>
+                    </h5>
+                    <p style="line-height: 1.5;" class="rows4overflow cursor-pointer"
+                        [routerLink]="'/articol/'+article.slug">
+                        {{stripHtmlString(article.text)}}</p>
+                </div>
+                <div class="andro_product-footer">
+                    <div class="andro_product-buttons">
+                        <a [routerLink]="'/articol/'+article.slug" class="andro_btn-custom primary">-></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product End -->
+        </div>
+    </div>
+</div>

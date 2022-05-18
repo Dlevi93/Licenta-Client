@@ -1,0 +1,29 @@
+<!-- Related Posts Start -->
+<div class="section pt-0 andro_related-posts" *ngIf="articles !== null">
+    <div class="container">
+        <div class="section-title flex-title">
+            <h4 class="title">Articole similare</h4>
+            <div class="andro_arrows">
+                <i class="fa fa-arrow-left slick-arrow slider-prev"></i>
+                <i class="fa fa-arrow-right slick-arrow slider-next"></i>
+            </div>
+        </div>
+        <div class="andro_related-posts-slider">
+            <!-- Article Start -->
+            <article class="andro_post" *ngFor="let related of articles">
+                <div class="andro_post-thumb" *ngIf="related.files[0].content !== null">
+                    <a [routerLink]="'/articol/'+related.slug">
+                        <img [src]="baseUrl + setImageSize(related.files[0], 'S')" alt="post">
+                    </a>
+                </div>
+                <div class="andro_post-body">
+                    <div class="andro_post-desc">
+                        <h5> <a [routerLink]="'/articol/'+related.slug"> {{related.title}} </a> </h5>
+                    </div>
+                    <a class="andro_btn-custom btn-block" [routerLink]="'/articol/'+related.slug"> Citește articolul </a>
+                </div>
+            </article>
+            <!-- Article End -->
+        </div>
+    </div>
+</div>

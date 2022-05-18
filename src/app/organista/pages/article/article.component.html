@@ -1,0 +1,90 @@
+<!-- Subheader Start -->
+<div class="andro_subheader primary-bg" *ngIf="article !== null">
+    <div class="container">
+        <div class="andro_subheader-inner">
+            <h1>{{article.title}}</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">{{article.category.name}}</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Subheader End -->
+<!-- Product Content Start -->
+<div class="section andro_post-single" style="padding-top:30px;" *ngIf="article !== null">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <ng-template [ngIf]="isArticle()" [ngIfElse]="IsPaper">
+                    <div class="entry-content">
+                        <div class="andro_post-single-thumb article"
+                            *ngIf="article.files !== null && article.files.length > 0">
+                            <img [src]="baseUrl + setImageSize(article.files[0], 'M')" alt="post">
+                        </div>
+                        <div [innerHTML]="article.text" [ngClass]="textClass"></div>
+                    </div>
+                </ng-template>
+
+                <ng-template #IsPaper>
+                    <ngx-extended-pdf-viewer [src]="baseUrl + article.files[0].content" useBrowserLocale="true"
+                        [enablePrint]="false" [showBookmarkButton]="false" [showDownloadButton]="false"
+                        [showOpenFileButton]="false" [showPropertiesButton]="false" [zoom]="'page-fit'"
+                        [showPresentationModeButton]="true" language="ro-RO" height="80vh">
+                    </ngx-extended-pdf-viewer>
+                </ng-template>
+
+            </div>
+            <!-- Sidebar Start -->
+            <div class="col-lg-4">
+                <app-article-sidebar [article]="article" (fontSizeEmitter)="changeFontSize($event)">
+                </app-article-sidebar>
+            </div>
+            <!-- Sidebar End -->
+        </div>
+    </div>
+</div>
+<!-- Product Content End -->
+<!-- Comment Form Start -->
+<div class="section pt-0">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="title">Comentarii</h4>
+        </div>
+        <div class="comment-form">
+            <form name="commentForm" [formGroup]="commentForm">
+                <div class="row">
+                    <div class="col-md-5 form-group">
+                        <input type="text" class="form-control" placeholder="Nume" formControlName="fullName">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <textarea maxlength="512" class="form-control" placeholder="Mesaj" formControlName="text"
+                            rows="7"></textarea>
+                    </div>
+                </div>
+                <button type="button" class="andro_btn-custom primary" (click)="submitComment()"
+                    name="button">Adăugare</button>
+            </form>
+        </div>
+        <div class="comments-list">
+            <hr />
+            <ul>
+                <li class="comment-item" *ngFor="let comment of article.comments">
+                    <div class="comment-body">
+                        <h5>{{comment.fullName}}</h5>
+                        <span style="margin-right:20px;">{{comment.dateCreated + 'Z' | date:'medium':'':'ro'}}</span>
+                        <p [innerHTML]="comment.text"></p>
+                    </div>
+                </li>
+            </ul>
+            <hr />
+        </div>
+    </div>
+</div>
+<!-- Comment Form End -->
+<app-related-articles></app-related-articles>

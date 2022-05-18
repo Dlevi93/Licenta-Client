@@ -1,0 +1,14 @@
+.profile-pic{
+    max-width: 65px;
+    border-radius: 55px;
+    position: absolute;
+    top: -8px;
+    margin-left: 8px;
+}
+.cursor-pointer:hover{
+    color: red;
+}
+
+.andro_post-single-thumb.article img{
+    width: 100%;
+}

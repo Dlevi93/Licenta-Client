@@ -1,0 +1,9 @@
+:host ::ng-deep .newsticker>.nt-title>h2 {
+    font-size: 14px !important;
+    color:#838383 !important;
+  }
+
+:host ::ng-deep .newsticker>.nt-content>label>a {
+    color:#838383;
+    font-size: 14px;
+}

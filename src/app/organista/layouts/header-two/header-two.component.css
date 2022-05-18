@@ -1,0 +1,24 @@
+.andro_search-adv-input .form-control{
+    border-radius: 25px;
+}
+
+.andro_search-adv{
+    right: 0;
+    position: absolute;
+}
+
+.andro_header-top-links a{
+    padding: 2px 0px !important;
+}
+
+.andro_header-middle .navbar{
+    padding: 5px 0px !important;
+}
+
+.navbar-brand{
+    width: 275px !important;
+}
+
+.andro_header-bottom-inner > .navbar-nav > .menu-item > a, .andro_header-middle .navbar > .navbar-nav > .menu-item > a{
+    padding: 15px 20px !important;
+}
