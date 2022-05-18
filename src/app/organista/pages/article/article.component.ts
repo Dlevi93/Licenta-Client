@@ -60,7 +60,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
   }
 
   private initTitle() {
-    this._titleService.setTitle(`MDP | ${this.article.title}`);
+    this._titleService.setTitle(`Licenta | ${this.article.title}`);
   }
 
   private initAuth() {

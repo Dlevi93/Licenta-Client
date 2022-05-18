@@ -10,29 +10,17 @@ export class HomeSectionFiveService implements Resolve<any>{
     routeParams: any;
 
     culture: Article[];
-    church: Article[];
-    notes: Article[];
-    onroad: Article[];
-    hungary: Article[];
     foreign: Article[];
     sport: Article[];
     magazine: Article[];
 
     onCultureChanged: BehaviorSubject<any>;
-    onChurchChanged: BehaviorSubject<any>;
-    onNotesChanged: BehaviorSubject<any>;
-    onRoadChanged: BehaviorSubject<any>;
-    onHungaryChanged: BehaviorSubject<any>;
     onForeignChanged: BehaviorSubject<any>;
     onSportChanged: BehaviorSubject<any>;
     onMagazineChanged: BehaviorSubject<any>;
 
     constructor(private _httpClient: HttpClient) {
         this.onCultureChanged = new BehaviorSubject({});
-        this.onChurchChanged = new BehaviorSubject({});
-        this.onNotesChanged = new BehaviorSubject({});
-        this.onRoadChanged = new BehaviorSubject({});
-        this.onHungaryChanged = new BehaviorSubject({});
         this.onForeignChanged = new BehaviorSubject({});
         this.onSportChanged = new BehaviorSubject({});
         this.onMagazineChanged = new BehaviorSubject({});
@@ -44,10 +32,6 @@ export class HomeSectionFiveService implements Resolve<any>{
         return new Promise<void>((resolve, reject) => {
             Promise.all([
                 this.getCulture(),
-                this.getChurch(),
-                this.getNotes(),
-                this.getOnRoad(),
-                this.getHungary(),
                 this.getForeign(),
                 this.getSport(),
                 this.getMagazine()
@@ -62,7 +46,7 @@ export class HomeSectionFiveService implements Resolve<any>{
 
     getCulture(): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._httpClient.get(`${environment.apiUrl}/api/home/byCategory/kultur`)
+            this._httpClient.get(`${environment.apiUrl}/api/home/byCategory/cultura`)
                 .subscribe((response: any) => {
                     this.culture = response;
                     this.onCultureChanged.next(this.culture);
@@ -71,53 +55,9 @@ export class HomeSectionFiveService implements Resolve<any>{
         });
     }
 
-    getChurch(): Promise<any> {
-        return new Promise((resolve, reject) => {
-            this._httpClient.get(`${environment.apiUrl}/api/home/byCategory/egyhazi`)
-                .subscribe((response: any) => {
-                    this.church = response;
-                    this.onChurchChanged.next(this.church);
-                    resolve(response);
-                }, reject);
-        });
-    }
-
-    getNotes(): Promise<any> {
-        return new Promise((resolve, reject) => {
-            this._httpClient.get(`${environment.apiUrl}/api/home/byCategory/jegyzetek`)
-                .subscribe((response: any) => {
-                    this.notes = response;
-                    this.onNotesChanged.next(this.notes);
-                    resolve(response);
-                }, reject);
-        });
-    }
-
-    getOnRoad(): Promise<any> {
-        return new Promise((resolve, reject) => {
-            this._httpClient.get(`${environment.apiUrl}/api/home/byCategory/utravalo`)
-                .subscribe((response: any) => {
-                    this.onroad = response;
-                    this.onRoadChanged.next(this.onroad);
-                    resolve(response);
-                }, reject);
-        });
-    }
-
-    getHungary(): Promise<any> {
-        return new Promise((resolve, reject) => {
-            this._httpClient.get(`${environment.apiUrl}/api/home/byCategory/magyarorszag`)
-                .subscribe((response: any) => {
-                    this.hungary = response;
-                    this.onHungaryChanged.next(this.hungary);
-                    resolve(response);
-                }, reject);
-        });
-    }
-
     getForeign(): Promise<any> {
         return new Promise((resolve, reject) => {
-            this._httpClient.get(`${environment.apiUrl}/api/home/byCategory/kulfold`)
+            this._httpClient.get(`${environment.apiUrl}/api/home/byCategory/strainatate`)
                 .subscribe((response: any) => {
                     this.foreign = response;
                     this.onForeignChanged.next(this.foreign);

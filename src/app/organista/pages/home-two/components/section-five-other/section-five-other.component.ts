@@ -47,30 +47,6 @@ export class SectionFiveOtherComponent implements OnInit, OnDestroy {
         this.culture = articles;
       });
 
-    this._sectionService.onChurchChanged
-      .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe(articles => {
-        this.church = articles;
-      });
-
-    this._sectionService.onNotesChanged
-      .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe(articles => {
-        this.notes = articles;
-      });
-
-    this._sectionService.onRoadChanged
-      .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe(articles => {
-        this.onroad = articles;
-      });
-
-    this._sectionService.onHungaryChanged
-      .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe(articles => {
-        this.hungary = articles;
-      });
-
     this._sectionService.onForeignChanged
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe(articles => {
